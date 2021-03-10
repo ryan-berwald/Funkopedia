@@ -1,0 +1,50 @@
+[
+	{
+		"handle": "black-panther",
+		"title": "Black Panther",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/897627/Black_Panther_Shirts_and_Jackets_0490e751-49fc-42a3-bf83-d59d3acd753e_large.jpg",
+		"series": ["Pop! Tees & Apparel", "Funko Target Exclusives"]
+	},
+	{
+		"handle": "prison-mike",
+		"title": "Prison Mike",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/897282/Prison_Mike_Pins_and_Badges_25cd17fc-9e3c-4eda-88fc-4cd17de3f2dd_large.JPG",
+		"series": ["Chase Pieces", "Pop! Pins"]
+	},
+	{
+		"handle": "pam-beesly",
+		"title": "Pam Beesly",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/897281/Pam_Beesly_Pins_and_Badges_d3dd70b8-d418-4729-9b02-6fe010edd235_large.JPG",
+		"series": ["Pop! Pins"]
+	},
+	{
+		"handle": "jim-halpert",
+		"title": "Jim Halpert",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/897280/Jim_Halpert_Pins_and_Badges_101808e8-2a03-4eee-8d6e-2a6a8031b43d_large.JPG",
+		"series": ["Pop! Pins"]
+	},
+	{
+		"handle": "dwight-schrute",
+		"title": "Dwight Schrute",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/897276/Dwight_Schrute_Pins_and_Badges_1187b27b-9c96-488e-910d-1341516721eb_large.JPG",
+		"series": ["Pop! Pins"]
+	},
+	{
+		"handle": "michael-scott",
+		"title": "Michael Scott",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/897273/Michael_Scott_Pins_and_Badges_a0d46d01-147c-4d53-9a4c-3316bb516e0f_large.JPG",
+		"series": ["Pop! Pins"]
+	},
+	{
+		"handle": "c-3po-inferno",
+		"title": "C-3PO (Inferno)",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/897132/C-3PO_%2528Orange%2529_Vinyl_Art_Toys_85aedcda-1346-4ce9-972a-ad89dec757d6_large.jpg",
+		"series": ["Hikari", "Hikari Star Wars"]
+	},
+	{
+		"handle": "funkoverse-harry-potter-4-pack-(wizarding-world)",
+		"title": "Funkoverse Harry Potter (4 Pack) (Wizarding World)",
+		"imageName": "https://www.hobbydb.com/processed_uploads/catalog_item_photo/catalog_item_photo/image/896896/Funkoverse_Harry_Potter_%25284_Pack%2529_%2528Wizarding_World%2529_Board_Games_97dd9e3e-a321-4b7b-b654-46d72a187e57_large.JPG",
+		"series": ["Funkoverse"]
+	}
+]
