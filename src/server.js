@@ -1,10 +1,35 @@
+const { MongoClient } = require('mongodb');
+const uri = 'mongodb://192.168.1.168:27017/';
 const express = require('express');
-
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.get('/api/hello', (req, res) => {
-	res.send({ express: 'Hello From Express' });
+let status;
+
+const client = new MongoClient(uri);
+
+app.get('/api/hello', async (req, res) => {
+	try {
+		// Connect the client to the server
+		await client.connect();
+		// Establish and verify connection
+		await client.db('funko').command({ ping: 1 });
+	} finally {
+		const findResult = await client
+			.db('funko')
+			.collection('popems')
+			.find({
+				title: { $regex: '^Black Panther*' },
+			});
+		if ((await findResult.count()) === 0) {
+			console.log('No documents found!');
+		} else {
+			await findResult.forEach((e) => console.log(e.title));
+		}
+
+		await client.close();
+	}
+	res.send({ express: status });
 });
 
 app.post('/api/world', (req, res) => {
