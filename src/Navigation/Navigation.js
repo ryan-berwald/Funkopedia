@@ -1,27 +1,63 @@
-import React, { Component } from 'react';
-import { Navbar, FormControl, Button, Form } from 'react-bootstrap';
+import React from 'react';
+import { Navbar } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import './Navigation.css';
 import logo from '../pictures/Funko.svg';
-export default class Navigation extends Component {
-	render() {
-		return (
-			<Navbar bg="dark" expand="lg">
-				<Navbar.Brand href="#home">
-					<img width="60" heigh="60" alt="Logo" src={logo} />
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="mr-auto">
-						<Nav.Link href="#home">Home</Nav.Link>
-						<Nav.Link href="#link">Link</Nav.Link>
-					</Nav>
-					<Form inline>
-						<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-						<Button variant="outline-success">Search</Button>
-					</Form>
-				</Navbar.Collapse>
-			</Navbar>
-		);
-	}
+
+const SearchBar = ({ addToArray }) => {
+	const data = require('../funko_pop.json');
+
+	const [searchTerm, setSearchTerm] = React.useState('');
+
+	const handleChange = (event) => {
+		setSearchTerm(event.target.value);
+		setTimeout(() => {
+			console.log(searchTerm);
+			/* if (event.target.value) {
+				data.forEach((e) => {
+					if (e.title.toUpperCase().includes(searchTerm.toUpperCase())) {
+						addToArray(e);
+					}
+				});
+			} */
+		}, 1000);
+	};
+
+	return (
+		<nav className="navbar navbar-light bg-light">
+			<form className="form-inline">
+				<input
+					className="form-control mr-sm-2"
+					type="search"
+					placeholder="Search"
+					aria-label="Search"
+					onChange={handleChange}
+					value={searchTerm}
+				></input>
+				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+					Search
+				</button>
+			</form>
+		</nav>
+	);
+};
+
+function Navigationbar({ addToArray }) {
+	return (
+		<Navbar bg="light" expand="lg">
+			<Navbar.Brand href="#home">
+				<img width="60" heigh="60" alt="Logo" src={logo} />
+			</Navbar.Brand>
+			<Navbar.Toggle aria-controls="basic-navbar-nav" />
+			<Navbar.Collapse id="basic-navbar-nav">
+				<Nav className="mr-auto">
+					<Nav.Link href="#home">Home</Nav.Link>
+					<Nav.Link href="#link">Link</Nav.Link>
+				</Nav>
+				<SearchBar addToArray={addToArray} />
+			</Navbar.Collapse>
+		</Navbar>
+	);
 }
+
+export default Navigationbar;

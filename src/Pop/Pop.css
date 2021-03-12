@@ -1,4 +1,5 @@
 .pop_title {
+	margin-top: 1em;
 	font-size: 48px;
 	font-family: sans-serif;
 	background-color: white;
@@ -9,6 +10,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1em;
+	height: 60%;
+	width: 80%;
 }
 
 .pop {
@@ -16,10 +19,12 @@
 	background-color: white;
 	margin-top: 1em;
 	margin-right: 1em;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 .btn-formatting {
-	margin-top: 1em;
+	margin-top: 3em;
 	margin-bottom: 1em;
 }
 

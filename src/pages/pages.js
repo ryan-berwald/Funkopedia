@@ -23,7 +23,7 @@ const pagesComp = ({ increment, count, decrement, reset }) => {
 				{count}
 			</Pagination.Item>
 			<Pagination.Item key={'next'}>{count + 1}</Pagination.Item>
-			<Pagination.Next onClick={() => increment(count + 1)} />
+			<Pagination.Next onClick={() => increment()} />
 			<Pagination.Last />
 		</Pagination>
 	);

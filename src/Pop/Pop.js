@@ -13,11 +13,16 @@ const Pop = ({ count }) => {
 	);
 };
 
-function makeElement(startIndex) {
+function makeElement(count) {
 	let element = [];
-	let endIndex = startIndex + 8;
-	// figure out startIndex problem
-	for (let x = startIndex - 1; x < endIndex; x++) {
+	let endIndex = count * 9 - 1;
+	let startIndex;
+	if (count === 1) {
+		startIndex = 0;
+	} else {
+		startIndex = endIndex - 8;
+	}
+	for (let x = startIndex; x <= endIndex; x++) {
 		element.push(
 			<Col className="pop" xs lg="3">
 				<img
