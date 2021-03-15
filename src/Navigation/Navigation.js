@@ -5,52 +5,28 @@ import './Navigation.css';
 import logo from '../pictures/Funko.svg';
 
 const SearchBar = () => {
-	const data = require('../funko_pop.json');
-	const [searchResults, setSearchResults] = useState([]);
-
+	//need to creat ul in dataset!!!!
 	const [searchTerm, setSearchTerm] = React.useState('');
-
-	const addToArray = (e) => {
-		setSearchResults(() => [e]);
-		console.log(searchResults[1]);
-	};
-
+	const [searchResults, setSearchResults] = React.useState([]);
+	let timer = null;
 	const getPops = () => {
-		fetch('http://localhost:5000/api/hello')
-			.then((res) => res.json())
-			.then((res) => console.log(res));
+		let url = new URL('http://localhost:5000/api/search/');
+		url.searchParams.set('q', searchTerm);
+		fetch(url).then((res) => setSearchResults(res.json()));
 	};
 
 	const handleChange = (event) => {
-		setSearchTerm(event.target.value);
-		setTimeout(() => {
+		clearTimeout(timer);
+		timer = setTimeout(function () {
+			setSearchTerm(event.target.value);
 			console.log(searchTerm);
 			getPops();
-			/* if (event.target.value) {
-				data.forEach((e) => {
-					if (e.title.toUpperCase().includes(searchTerm.toUpperCase())) {
-						addToArray(e);
-					}
-				});
-			} */
 		}, 1000);
 	};
-
 	return (
 		<nav className="navbar navbar-light bg-light">
-			<form className="form-inline">
-				<input
-					className="form-control mr-sm-2"
-					type="search"
-					placeholder="Search"
-					aria-label="Search"
-					onChange={handleChange}
-					value={searchTerm}
-				></input>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Search
-				</button>
-			</form>
+			<input onChange={handleChange} type="text" list="cars" />
+			<datalist id="cars">{searchTerm}</datalist>
 		</nav>
 	);
 };

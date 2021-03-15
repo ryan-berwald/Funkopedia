@@ -37,10 +37,13 @@ function makeElement(count) {
 					Official Site
 				</button>
 				<h4 className="series">
+					<strong>Title: </strong>
+					{data[x].title}
+				</h4>
+				<h4 className="series">
 					<strong>Series: </strong>
 					{data[x].series}
 				</h4>
-				<br />
 			</Col>
 		);
 	}
