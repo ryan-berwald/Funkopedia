@@ -2,6 +2,13 @@
 	overflow-x: hidden;
 }
 
+html,
+body,
+#app,
+#app,
 #root {
+	height: 100%;
 	background-color: darkred;
+	background-size: cover;
+	background-attachment: fixed;
 }

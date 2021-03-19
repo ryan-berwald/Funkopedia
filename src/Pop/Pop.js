@@ -24,7 +24,7 @@ function makeElement(count) {
 	}
 	for (let x = startIndex; x <= endIndex; x++) {
 		element.push(
-			<Col className="pop" xs lg="3">
+			<div className="col-sm-3 pop justify-content-center ">
 				<img
 					src={data[x].imageName}
 					alt={data[x].handle}
@@ -44,9 +44,10 @@ function makeElement(count) {
 					<strong>Series: </strong>
 					{data[x].series}
 				</h4>
-			</Col>
+			</div>
 		);
 	}
+
 	return element;
 }
 
