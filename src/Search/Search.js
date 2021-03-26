@@ -21,13 +21,10 @@ const SearchBar = () => {
 		let url = new URL('http://localhost:5000/api/search/');
 		url.searchParams.set('q', event.target.value);
 		//get data
-		axios
-			.get(url)
-			.then((res) => {
-				//set search results state object
-				setSearchResults([...res.data]);
-			})
-			.then(console.log('finished'));
+		axios.get(url).then((res) => {
+			//set search results state object
+			setSearchResults([...res.data]);
+		});
 	};
 
 	const handleChange = (event) => {
@@ -39,7 +36,9 @@ const SearchBar = () => {
 	};
 
 	const handleBlur = () => {
-		setHidden(true);
+		timer = setTimeout(function () {
+			setHidden(true);
+		}, 100);
 	};
 
 	let element = [];
@@ -47,7 +46,7 @@ const SearchBar = () => {
 		element.push(
 			<Link
 				className="autocomplete-items"
-				to={'/details/' + searchResults[x]._id}
+				to={`/details/${searchResults[x]._id}`}
 			>
 				<img
 					alt={searchResults[x].handle}
@@ -56,10 +55,6 @@ const SearchBar = () => {
 				{searchResults[x].title}
 			</Link>
 		);
-
-		<Switch>
-			<Route path="/details/:id" />
-		</Switch>;
 	}
 	return (
 		<div className="container">
@@ -80,6 +75,7 @@ const SearchBar = () => {
 			</div>
 			<div className="color" hidden={hidden}>
 				{element}
+				<Route path="/details/:id" component={Details} />;
 			</div>
 		</div>
 	);

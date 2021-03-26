@@ -3,6 +3,14 @@ import { Navbar } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import './Navigation.css';
 import logo from '../pictures/Funko.svg';
+import AllPops from '../AllPops/AllPops.js';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useRouteMatch,
+} from 'react-router-dom';
 
 const Navigationbar = () => {
 	return (
@@ -13,8 +21,7 @@ const Navigationbar = () => {
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="mr-auto">
-					<Nav.Link href="#home">Home</Nav.Link>
-					<Nav.Link href="#link">Link</Nav.Link>
+					<Nav.Link href="/">Home</Nav.Link>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>

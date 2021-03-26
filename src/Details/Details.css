@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .card {
 	background-color: white;
 	border-radius: 3px;
-	height: 82%;
+	height: 80vh;
 	width: 100%;
 	margin-top: 24px;
 }
@@ -10,9 +12,44 @@
 	overflow-y: hidden;
 }
 
+.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .portrait {
-	margin-top: 1.5%;
+	margin-top: 0;
 	background-color: gray;
-	height: 100%;
-	width: 20%;
+	height: 85%;
+	width: 60%;
+	overflow: hidden;
+	position: relative;
+	margin-left: 20%;
+	
+}
+
+.popTitle {
+	font-family: Brush Script MT, Brush Script Std, cursive;
+	background-color: darkred;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	width: 100%;
+}
+
+#infoHeading {
+	color: darkred;
+	text-align: center;
+	font-family: Brush Script MT, Brush Script Std, cursive;
+	font-size: 48px;
+}
+
+.btn-primary{
+	background-color: darkred!important;
+	color: white;
+}
+
+.btn-primary:hover{
+	background-color: rgb(78, 0, 0)!important;
+	color: white;
 }

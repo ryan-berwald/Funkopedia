@@ -32,7 +32,7 @@ function makeElement(count) {
 				/>
 				<button
 					type="button"
-					className="btn-formatting btn btn-outline-primary btn-block"
+					className="btn-formatting btn btn-primary btn-block"
 				>
 					Official Site
 				</button>
