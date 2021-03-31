@@ -4,7 +4,6 @@ import './index.css';
 import Navigationbar from './Navigation/Navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import SearchBar from '../src/Search/Search';
 import Details from './Details/Details';
 import AllPops from './AllPops/AllPops';
 

@@ -3,14 +3,6 @@ import { Navbar } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import './Navigation.css';
 import logo from '../pictures/Funko.svg';
-import AllPops from '../AllPops/AllPops.js';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useRouteMatch,
-} from 'react-router-dom';
 
 const Navigationbar = () => {
 	return (

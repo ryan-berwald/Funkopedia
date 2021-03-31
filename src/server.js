@@ -4,6 +4,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
+const database = 'funko';
+const collection = 'popems';
+
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 var ObjectId = require('mongodb').ObjectID;
 
@@ -11,7 +14,7 @@ app.get('/api/search/', async (req, res) => {
 	// Connect the client to the server
 	await client.connect();
 	// Establish and verify connection
-	await client.db('funko').command({ ping: 1 });
+	await client.db(database).command({ ping: 1 });
 
 	console.log('started exp');
 	let query = req.query.q;
@@ -21,8 +24,8 @@ app.get('/api/search/', async (req, res) => {
 		.join(' ');
 	console.log('db req');
 	const findResult = await client
-		.db('funko')
-		.collection('popems')
+		.db(database)
+		.collection(collection)
 		.find({
 			title: { $regex: '^' + query + '*' },
 		})
@@ -39,18 +42,19 @@ app.get('/api/details/', async (req, res) => {
 	// Connect the client to the server
 	await client.connect();
 	// Establish and verify connection
-	await client.db('funko').command({ ping: 1 });
+	await client.db(database).command({ ping: 1 });
 	let query = req.query.id;
 	console.log(query);
-	console.log('db req');
 	const findResult = await client
-		.db('funko')
-		.collection('popems')
+		.db(database)
+		.collection(collection)
 		.findOne({
 			_id: ObjectId(query),
 		});
-
+	console.log('TOTALRES');
 	console.log(findResult);
+	console.log('PRICEDATA');
+	console.log(findResult.price.data[0]);
 	res.send(findResult);
 });
 app.listen(port, () => console.log(`Listening on port ${port}`));
