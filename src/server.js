@@ -51,10 +51,28 @@ app.get('/api/details/', async (req, res) => {
 		.findOne({
 			_id: ObjectId(query),
 		});
-	console.log('TOTALRES');
-	console.log(findResult);
-	console.log('PRICEDATA');
-	console.log(findResult.price.data[0]);
+
 	res.send(findResult);
 });
+
+app.get('/api/allpops/', async (req, res) => {
+	// Connect the client to the server
+	await client.connect();
+	// Establish and verify connection
+	await client.db(database).command({ ping: 1 });
+	let startIndex = parseInt(req.query.startIndex);
+	console.log(startIndex);
+	let endIndex = parseInt(req.query.endIndex);
+	console.log(endIndex);
+	const findResult = await client
+		.db(database)
+		.collection(collection)
+		.find()
+		.skip(startIndex)
+		.limit(endIndex + 1)
+		.toArray();
+	console.log(findResult);
+	res.json(findResult);
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -1,9 +1,3 @@
-.pop {
-	z-index: 1;
-	position: relative;
-	margin-top: 5em;
-}
-
 .search {
 	z-index: 99;
 	position: absolute;
@@ -15,4 +9,60 @@
 
 .container {
 	position: relative;
+}
+
+.pop_title {
+	margin-top: 1em;
+	font-size: 48px;
+	font-family: sans-serif;
+	background-color: white;
+}
+
+.pop_pic {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1em;
+	height: 60%;
+	width: 80%;
+}
+
+.pop {
+	border-radius: 10px;
+	background-color: white;
+	margin-top: 1em;
+	margin-right: 1em;
+	z-index: 1;
+	position: relative;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.btn-formatting {
+	margin-top: 3em;
+	margin-bottom: 1em;
+}
+
+.faIcons {
+	background-color: transparent;
+	width: 50px;
+}
+
+.series {
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+.btn-primary {
+	background-color: darkred !important;
+	color: white;
+}
+
+.btn-primary:hover {
+	background-color: rgb(78, 0, 0) !important;
+	color: white;
+}
+
+.popsContainer {
+	margin-top: 20vh;
 }

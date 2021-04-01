@@ -9,7 +9,8 @@ let url = new URL('http://localhost:5000/api/details/');
 const Details = () => {
 	let { id } = useParams();
 	console.log(id);
-	let priceData = [];
+	let priceData = []; //parallel arrays for price and dates of sale
+	let dateData = [];
 	const [data, setData] = useState({});
 	let dataLoaded = false;
 	url.searchParams.set('id', id);
@@ -20,13 +21,32 @@ const Details = () => {
 	}, [id]);
 
 	if (data._id) {
-		data.price.data.forEach((e) => {
-			priceData.push(e.attributes.value);
-		});
+		if (data.price.data.length > 5) {
+			for (
+				let x = data.price.data.length - 6;
+				x < data.price.data.length;
+				x++
+			) {
+				priceData.push(data.price.data[x].attributes.value);
+				if (data.price.data[x].attributes.dateEnd) {
+					dateData.push(data.price.data[x].attributes.dateEnd.split('T', [1]));
+				} else if (data.price.data[x].attributes.dateStart) {
+					dateData.push(
+						data.price.data[x].attributes.dateStart.split('T', [1])
+					);
+				}
+			}
+		} else {
+			for (let x = 0; x < data.price.data.length; x++) {
+				priceData.push(data.price.data[x].attributes.value);
+				dateData.push(data.price.data[x].attributes.dateEnd.split('T', [1]));
+			}
+		}
+		console.log(dateData);
 		dataLoaded = true;
 	}
 	const chartData = {
-		labels: ['1', '2', '3', '4', '5', '6'],
+		labels: dateData,
 		datasets: [
 			{
 				label: 'Price',
@@ -43,8 +63,8 @@ const Details = () => {
 				<div className="row no-overflow">
 					<div className="col-12 ">
 						<div className="container-fluid card">
-							<div className="row h-100 no-overflow">
-								<div className="col-sm-6 center">
+							<div className="row h-100">
+								<div className="col-sm-6 center no-overflow">
 									<img
 										alt="portrait"
 										className="portrait"
@@ -56,25 +76,19 @@ const Details = () => {
 									<h1 id="infoHeading" className="no-overflow">
 										Details:
 									</h1>
-									<ul>
-										<li>
-											<h4 className="no-overflow">Series: {data.series}</h4>
-										</li>
 
-										<li>
-											<Line data={chartData} />
-										</li>
-										<li>
-											<a href={data.imageName}>
-												<button
-													type="button"
-													class="btn-primary btn btn-lg btn-block"
-												>
-													HobbyDB
-												</button>
-											</a>
-										</li>
-									</ul>
+									<h4 className="no-overflow">Series: {data.series}</h4>
+
+									<Line data={chartData} />
+
+									<a href={data.imageName}>
+										<button
+											type="button"
+											class="btn-primary btn btn-lg btn-block"
+										>
+											HobbyDB
+										</button>
+									</a>
 								</div>
 							</div>
 						</div>
