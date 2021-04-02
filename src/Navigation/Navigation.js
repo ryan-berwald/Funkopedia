@@ -7,7 +7,7 @@ import logo from '../pictures/Funko.svg';
 const Navigationbar = () => {
 	return (
 		<Navbar className="parentnav" bg="light" expand="lg">
-			<Navbar.Brand href="#home">
+			<Navbar.Brand>
 				<img width="60" heigh="60" alt="Logo" src={logo} />
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -16,7 +16,7 @@ const pagesComp = ({ increment, count, decrement, reset }) => {
 
 	return (
 		<Pagination className="paginator justify-content-center">
-			<Pagination.First />
+			<Pagination.First onClick={() => reset()} />
 			{IsDisabled()}
 
 			<Pagination.Item active key={'current'}>
@@ -24,7 +24,6 @@ const pagesComp = ({ increment, count, decrement, reset }) => {
 			</Pagination.Item>
 			<Pagination.Item key={'next'}>{count + 1}</Pagination.Item>
 			<Pagination.Next onClick={() => increment()} />
-			<Pagination.Last />
 		</Pagination>
 	);
 };

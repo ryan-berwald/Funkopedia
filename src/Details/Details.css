@@ -8,6 +8,10 @@
 	margin-top: 24px;
 }
 
+.row {
+	overflow-y: hidden;
+}
+
 .no-overflow {
 	overflow-y: hidden;
 }
@@ -20,20 +24,23 @@
 .portrait {
 	margin-top: 0;
 	background-color: gray;
-	height: 80%;
-	width: 60%;
+	max-height: 80%;
+	max-width: 60%;
 	overflow: hidden;
 	position: relative;
 	margin-left: 20%;
+	margin-top: 10vh;
 }
 
 .popTitle {
 	font-family: Brush Script MT, Brush Script Std, cursive;
+	font-size: 2em;
 	background-color: darkred;
 	color: white;
 	border-radius: 5px;
 	text-align: center;
 	width: 100%;
+	margin-top: 11.5vh;
 }
 
 #infoHeading {
@@ -43,7 +50,7 @@
 	font-size: 48px;
 }
 .btn {
-	margin-top: 5%;
+	margin-top: 6.5vh;
 }
 .btn-primary {
 	background-color: darkred !important;
