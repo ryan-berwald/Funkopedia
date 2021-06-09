@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> A web app built with React that fetches data from a MongoDB instance and display information regarding all pops in order of release date, from newest to oldest. Once you select a pop, specific details are fetched from the Mongo instance regarding price and a graph is displayed. The data is compiled through open APIs from hobbydb.com and web scraping.
+> A web app built with React that fetches data from a MongoDB instance and displays information regarding all pops in order of release date, from newest to oldest. Once you select a pop, specific details are fetched from the Mongo instance regarding price and a graph is displayed. The data is compiled through open APIs from hobbydb.com and web scraping. 
 
 ## Install
 
